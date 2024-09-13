@@ -1,2 +1,5 @@
-# AI
-AI Projects 
+# AI WEB SCRAPER
+
+## TECH STACK
+
+1. Selinium
