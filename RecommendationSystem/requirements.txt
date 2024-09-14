@@ -1,0 +1,11 @@
+streamlit 
+pandas 
+numpy 
+scikit-learn 
+gensim 
+transformers 
+torch
+llama-cpp-python
+langchain-ollama 
+langchain-core
+pydantic[email]
