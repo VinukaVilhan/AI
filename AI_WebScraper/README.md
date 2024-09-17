@@ -1,28 +1,112 @@
 # AI Web Scraper
 
-This project is a web scraping tool with a user-friendly interface built using [Streamlit](https://streamlit.io/), which helps scrape data from web pages without getting blocked by IP bans. It utilizes the [Tor](https://www.torproject.org/) network for anonymous requests, and [Ollama Model 3.1](https://ollama.com/) to process and generate outputs based on the scraped content.
+This project is an AI-powered web scraper that utilizes Tor for anonymous scraping and Ollama (LLaMA 3.1) for generating insights from the scraped data. The user interface is built with Streamlit for ease of use.
+
+## Table of Contents
+
+- [AI Web Scraper](#ai-web-scraper)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Technologies Used](#technologies-used)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Project Structure](#project-structure)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Features
 
-- **Web Scraping with Tor**: Scrapes data through Tor to avoid IP bans.
-- **Streamlit Interface**: Simple and interactive interface to initiate scraping.
-- **Ollama Model Integration**: Uses the AI model to generate outcomes based on the user's prompts.
-- **Rotating User Agents**: Uses `fake-useragent` to add randomness in requests to avoid bot detection.
-- **Flexible Scraping Methods**: Combines requests, Selenium, and Tor-based scraping for better results.
+- Web scraping with IP rotation using Tor
+- AI-powered analysis of scraped data using Ollama (LLaMA 3.1)
+- User-friendly interface built with Streamlit
+- Multiple scraping methods (requests, Selenium, Tor)
+- User agent rotation for enhanced anonymity
+
+## Technologies Used
+
+- Python
+- Streamlit
+- Langchain
+- Selenium
+- BeautifulSoup4
+- Tor
+- Ollama (LLaMA 3.1)
+- WSL (Windows Subsystem for Linux)
+
+## Prerequisites
+
+- Python 3.7+
+- WSL (for running Tor and Ollama)
+- Tor
+- Ollama
 
 ## Installation
 
-### Prerequisites
+1. Clone the repository:
 
-- **Python**: Ensure Python is installed (version 3.8 or higher recommended).
-- **Tor**: Tor should be installed and running for anonymous scraping.
-- **Ollama Model**: Ollama's Llama 3.1 model must be installed for AI-based data parsing.
+   ```
+   git clone https://github.com/AI.git
+   cd AI/AI_WebScraper
+   ```
 
-### Installing Requirements
+2. Install the required Python packages:
 
-Install the necessary dependencies from `requirements.txt`:
+   ```
+   pip install -r requirements.txt
+   ```
 
-```bash
-pip install -r requirements.txt
+3. Install Tor (in WSL):
 
+   ```
+   sudo apt install tor
+   ```
 
+4. Install Ollama:
+
+   ```
+   curl -fsSL https://ollama.com/install.sh | sh
+   ```
+
+## Usage
+
+1. Start the Tor service:
+
+   ```
+   sudo service tor start
+   ```
+
+2. Verify Tor is running:
+
+   ```
+   curl --socks5-hostname localhost:9050 http://check.torproject.org
+   ```
+
+3. Start the Ollama server:
+
+   ```
+   ollama serve
+   ```
+
+4. Run the Streamlit app:
+
+   ```
+   streamlit run main.py
+   ```
+
+5. Open your web browser and navigate to the URL provided by Streamlit (usually `http://localhost:8501`).
+
+## Project Structure
+
+- `main.py`: The main Streamlit application
+- `scrape.py`: Contains the web scraping logic
+- `parse.py`: Handles parsing and AI analysis of scraped data
+- `requirements.txt`: List of Python dependencies
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
