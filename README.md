@@ -1,3 +1,3 @@
 # AI
 
-## All ma Homies love AI
+All ma Homies love AI
