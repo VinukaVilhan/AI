@@ -1,0 +1,9 @@
+langchain
+# vector storage
+chromadb 
+# loading pdfs
+pypdf
+# unit testing
+pytest
+streamlit
+langchain-community
